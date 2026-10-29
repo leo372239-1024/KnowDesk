@@ -1,0 +1,22 @@
+# KnowDesk 本地开发编排（Milvus/MinIO 复用本机已有 milvus-standalone 容器组）
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: knowdesk-postgres
+    environment:
+      POSTGRES_USER: knowdesk
+      POSTGRES_PASSWORD: knowdesk
+      POSTGRES_DB: knowdesk
+    ports:
+      - "5433:5432"
+    volumes:
+      - knowdesk_pg_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: knowdesk-redis
+    ports:
+      - "6380:6379"
+
+volumes:
+  knowdesk_pg_data:

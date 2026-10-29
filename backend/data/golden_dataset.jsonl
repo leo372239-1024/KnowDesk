@@ -1,0 +1,50 @@
+{"id":"q001","question":"XG-2000A 设备的额定电流是多少？","task_type":"参数查询","checkpoints":["额定电流","10A"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q002","question":"XG-2000A 的额定电压是多少？","task_type":"参数查询","checkpoints":["额定电压","220V"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q003","question":"XG-2000A 的额定功率是多少？","task_type":"参数查询","checkpoints":["额定功率","2.2kW"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q004","question":"XG-2000A 的工作频率是多少？","task_type":"参数查询","checkpoints":["50Hz"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q005","question":"XG-2000A 设备的重量是多少？","task_type":"参数查询","checkpoints":["12.5kg"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q006","question":"XG-2000A 的防护等级是什么？","task_type":"参数查询","checkpoints":["IP54"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q007","question":"XG-2000A 的电源线截面积要求是多少？","task_type":"参数查询","checkpoints":["2.5mm"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q008","question":"XG-2000A 应安装在什么环境温度范围？","task_type":"参数查询","checkpoints":["-10℃","40℃"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q009","question":"XG-2000A 空气滤芯多久更换一次？","task_type":"参数查询","checkpoints":["半年"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q010","question":"XG-2000A 无法启动应该检查什么？","task_type":"参数查询","checkpoints":["电源","保险丝"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q011","question":"一线城市的出差住宿标准是多少？","task_type":"制度判定","checkpoints":["一线城市","500 元"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q012","question":"非一线城市住宿标准是多少？","task_type":"制度判定","checkpoints":["300 元"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q013","question":"住宿超标部分由谁承担？","task_type":"制度判定","checkpoints":["个人"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q014","question":"出差乘坐高铁是什么标准？","task_type":"制度判定","checkpoints":["二等座"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q015","question":"市内交通每日限额是多少？","task_type":"制度判定","checkpoints":["100 元"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q016","question":"参加会议且会议指定酒店，住宿能据实报销吗？","task_type":"制度判定","checkpoints":["据实报销"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q017","question":"出差报销单应在多久内提交？","task_type":"制度判定","checkpoints":["7 个工作日"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q018","question":"紧急需乘坐商务座怎么处理？","task_type":"制度判定","checkpoints":["部门负责人","审批"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q019","question":"报销审批路径是什么？","task_type":"制度判定","checkpoints":["部门负责人","财务","出纳"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q020","question":"报销单需要附什么材料？","task_type":"制度判定","checkpoints":["发票","行程单"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q021","question":"合同金额 15 万元需要哪些人审批？","task_type":"多文档综合","checkpoints":["部门负责人","分管副总"],"must_cite_doc_ids":["33333333-3333-4333-8333-333333333333"],"unanswerable":false}
+{"id":"q022","question":"合同金额 120 万元需要哪些人审批？","task_type":"多文档综合","checkpoints":["部门负责人","分管副总","总经理"],"must_cite_doc_ids":["33333333-3333-4333-8333-333333333333"],"unanswerable":false}
+{"id":"q023","question":"合同金额 5 万元需要谁审批？","task_type":"多文档综合","checkpoints":["部门负责人"],"must_cite_doc_ids":["33333333-3333-4333-8333-333333333333"],"unanswerable":false}
+{"id":"q024","question":"盖章完成后多久归档？","task_type":"多文档综合","checkpoints":["3 个工作日"],"must_cite_doc_ids":["33333333-3333-4333-8333-333333333333"],"unanswerable":false}
+{"id":"q025","question":"用印需要登记哪些信息？","task_type":"多文档综合","checkpoints":["合同编号","用印人","日期"],"must_cite_doc_ids":["33333333-3333-4333-8333-333333333333"],"unanswerable":false}
+{"id":"q026","question":"合同盖章的第一步是什么？","task_type":"流程指引","checkpoints":["发起","申请"],"must_cite_doc_ids":["33333333-3333-4333-8333-333333333333"],"unanswerable":false}
+{"id":"q027","question":"盖章申请需要上传什么？","task_type":"流程指引","checkpoints":["电子版","审批单"],"must_cite_doc_ids":["33333333-3333-4333-8333-333333333333"],"unanswerable":false}
+{"id":"q028","question":"谁负责核对用印？","task_type":"流程指引","checkpoints":["印章管理员"],"must_cite_doc_ids":["33333333-3333-4333-8333-333333333333"],"unanswerable":false}
+{"id":"q029","question":"出差报销的完整流程是什么？","task_type":"流程指引","checkpoints":["提交报销单","审批","打款"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q030","question":"设备维护多久检查一次接线端子？","task_type":"流程指引","checkpoints":["每月"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q031","question":"设备出现异响应怎么处理？","task_type":"流程指引","checkpoints":["停机","检修"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q032","question":"设备过热保护应检查什么？","task_type":"流程指引","checkpoints":["散热风扇"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q033","question":"XG-2000A 安装面的负载要求是什么？","task_type":"流程指引","checkpoints":["3 倍"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q034","question":"合同盖章的审批环节有哪些？","task_type":"流程指引","checkpoints":["审批"],"must_cite_doc_ids":["33333333-3333-4333-8333-333333333333"],"unanswerable":false}
+{"id":"q035","question":"报销单审批后由谁打款？","task_type":"流程指引","checkpoints":["出纳"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q036","question":"明年 Q3 的销售目标是多少？","task_type":"拒答判定","checkpoints":[],"must_cite_doc_ids":[],"unanswerable":true}
+{"id":"q037","question":"公司今年的净利润是多少？","task_type":"拒答判定","checkpoints":[],"must_cite_doc_ids":[],"unanswerable":true}
+{"id":"q038","question":"张三的工号是多少？","task_type":"拒答判定","checkpoints":[],"must_cite_doc_ids":[],"unanswerable":true}
+{"id":"q039","question":"市场部今年的招聘计划是什么？","task_type":"拒答判定","checkpoints":[],"must_cite_doc_ids":[],"unanswerable":true}
+{"id":"q040","question":"竞争对手 Y 公司的产品参数是多少？","task_type":"拒答判定","checkpoints":[],"must_cite_doc_ids":[],"unanswerable":true}
+{"id":"q041","question":"公司股票代码是多少？","task_type":"拒答判定","checkpoints":[],"must_cite_doc_ids":[],"unanswerable":true}
+{"id":"q042","question":"下季度的产品路线图是什么？","task_type":"拒答判定","checkpoints":[],"must_cite_doc_ids":[],"unanswerable":true}
+{"id":"q043","question":"公司 CEO 的私人邮箱是什么？","task_type":"拒答判定","checkpoints":[],"must_cite_doc_ids":[],"unanswerable":true}
+{"id":"q044","question":"今年的年终奖发放比例是多少？","task_type":"拒答判定","checkpoints":[],"must_cite_doc_ids":[],"unanswerable":true}
+{"id":"q045","question":"公司办公楼的物业费是多少？","task_type":"拒答判定","checkpoints":[],"must_cite_doc_ids":[],"unanswerable":true}
+{"id":"q046","question":"XG-2000A 的额定电流和额定电压分别是什么？","task_type":"参数查询","checkpoints":["额定电流","10A","额定电压","220V"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q047","question":"设备运行异响的可能原因是什么？","task_type":"参数查询","checkpoints":["轴承","磨损"],"must_cite_doc_ids":["11111111-1111-4111-8111-111111111111"],"unanswerable":false}
+{"id":"q048","question":"报销时高铁一等座能全额报销吗？","task_type":"制度判定","checkpoints":["二等座"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}
+{"id":"q049","question":"合同金额 100 万整需要总经理审批吗？","task_type":"多文档综合","checkpoints":["总经理"],"must_cite_doc_ids":["33333333-3333-4333-8333-333333333333"],"unanswerable":false}
+{"id":"q050","question":"出差住宿标准里一线城市包含哪些？","task_type":"制度判定","checkpoints":["北京","上海","广州","深圳"],"must_cite_doc_ids":["22222222-2222-4222-8222-222222222222"],"unanswerable":false}

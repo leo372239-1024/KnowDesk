@@ -1,0 +1,16 @@
+{"file": ".trellis/spec/backend/index.md", "reason": "后端技术栈基线与架构原则"}
+{"file": ".trellis/spec/backend/directory-structure.md", "reason": "后端分层目录与依赖方向，实现时落位依据"}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "ORM/迁移/幂等/ACL 前置过滤规范"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "异常体系与模型/rerank/检索降级规范"}
+{"file": ".trellis/spec/backend/logging-guidelines.md", "reason": "structlog 与 trace_id 贯穿、审计、脱敏规范"}
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "后端质量标准与 Agent 五道闸门"}
+{"file": ".trellis/spec/frontend/index.md", "reason": "前端技术栈基线"}
+{"file": ".trellis/spec/frontend/directory-structure.md", "reason": "前端目录组织与命名"}
+{"file": ".trellis/spec/frontend/component-guidelines.md", "reason": "组件结构与 a11y 规范"}
+{"file": ".trellis/spec/frontend/hook-guidelines.md", "reason": "React Query 数据获取与 WS 流式 hook"}
+{"file": ".trellis/spec/frontend/state-management.md", "reason": "状态四分类与归属判定"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "strict TS 与 Zod 边界校验"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "前端 lint/测试/XSS 防护规范"}
+{"file": ".trellis/spec/guides/code-reuse-thinking-guide.md", "reason": "代码复用与抽象时机"}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "跨层数据流契约思维"}
+{"file": ".trellis/tasks/10-28-knowdesk-mvp/design.md", "reason": "架构边界、数据流契约、4 亮点深化方案"}

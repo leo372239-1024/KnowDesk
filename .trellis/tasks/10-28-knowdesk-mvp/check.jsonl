@@ -1,0 +1,7 @@
+{"file": ".trellis/spec/backend/quality-guidelines.md", "reason": "检查后端质量与 Agent 闸门是否符合规范"}
+{"file": ".trellis/spec/backend/error-handling.md", "reason": "检查异常/降级是否符合规范"}
+{"file": ".trellis/spec/backend/database-guidelines.md", "reason": "检查 ORM/迁移/ACL 是否符合规范"}
+{"file": ".trellis/spec/frontend/quality-guidelines.md", "reason": "检查前端质量与 XSS 防护"}
+{"file": ".trellis/spec/frontend/type-safety.md", "reason": "检查类型安全与 Zod 校验"}
+{"file": ".trellis/spec/guides/cross-layer-thinking-guide.md", "reason": "检查跨层契约一致性"}
+{"file": ".trellis/tasks/10-28-knowdesk-mvp/prd.md", "reason": "验收标准对照，确认 FR/AC 全部满足"}

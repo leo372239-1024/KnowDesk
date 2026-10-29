@@ -1,59 +1,50 @@
 # Component Guidelines
 
-> How components are built in this project.
+> KnowDesk 前端组件如何编写：结构、props、样式、可访问性。
 
----
+## 组件结构
 
-## Overview
+函数组件，命名导出，类型显式。结构顺序固定：hook 调用 → 派生数据 → 事件处理器 → JSX：
 
-<!--
-Document your project's component conventions here.
+```tsx
+export function Citation({ docId, chunkId, onOpen }: CitationProps) {
+  const { data: chunk } = useChunk(docId, chunkId);
 
-Questions to answer:
-- What component patterns do you use?
-- How are props defined?
-- How do you handle composition?
-- What accessibility standards apply?
--->
+  const handleOpen = () => onOpen(docId, chunkId);
 
-(To be filled by the team)
+  return (
+    <a onClick={handleOpen} className="citation">
+      [doc#{chunkId}]
+    </a>
+  );
+}
+```
 
----
+- 组件内 hook 调用数量稳定、顺序稳定（不写在条件里）。
+- 数据获取一律下沉到 `useXxx` hook，组件只消费状态。
 
-## Component Structure
+## Props 约定
 
-<!-- Standard structure of a component file -->
+- Props 用 `interface XxxProps` 显式定义，紧贴组件上方。
+- 事件回调以 `on` 前缀（`onOpen`、`onDelete`），可选回调默认无操作。
+- 需要透传 AntD 组件原生属性时用 `extends Omit<ButtonProps, ...>` 而非 `any`。
+- 避免「props 钻透」（层层透传无消费的 prop）；超出 2 层考虑组合或 context。
 
-(To be filled by the team)
+## 样式与主题
 
----
+- 统一用 AntD `ConfigProvider` 主题 token（主色、圆角、字号），组件内**不硬编码颜色值**。
+- 需要自定义样式用 CSS Modules 或 AntD `token` 变量；禁止内联 `style={{color: '#xxx'}}`。
+- 间距/尺寸用 AntD 的 `Space`、`Row/Col` 栅格，不手写 margin 像素魔法数。
 
-## Props Conventions
+## 可访问性（a11y）
 
-<!-- How props should be defined and typed -->
+- 交互元素用原生语义（`button`/`a`/`input`），不 `div onClick` 冒充按钮。
+- 图标按钮必须有 `aria-label`。
+- 引用跳转、拒答提示等关键状态对读屏可见（ARIA live region 用于流式答案状态）。
 
-(To be filled by the team)
+## 反模式
 
----
-
-## Styling Patterns
-
-<!-- How styles are applied (CSS modules, styled-components, Tailwind, etc.) -->
-
-(To be filled by the team)
-
----
-
-## Accessibility
-
-<!-- A11y requirements and patterns -->
-
-(To be filled by the team)
-
----
-
-## Common Mistakes
-
-<!-- Component-related mistakes your team has made -->
-
-(To be filled by the team)
+- ❌ 巨型组件（>300 行）不拆分。
+- ❌ default export、`any` props、`React.FC` 显式标注（用 `function` + 显式 props）。
+- ❌ 组件内定义子组件（每次渲染重建，丢失状态）。
+- ❌ 硬编码颜色/魔法数字。

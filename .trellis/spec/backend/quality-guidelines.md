@@ -1,51 +1,51 @@
 # Quality Guidelines
 
-> Code quality standards for backend development.
+> KnowDesk 后端的代码质量标准、测试要求、Agent 特有的质量闸门。
 
----
+## 类型与校验
 
-## Overview
+- 所有函数有类型注解；`pyright`/`mypy` 无 `Any` 泄漏（`Any` 需注释说明）。
+- 一切外部输入（HTTP 请求、LLM 输出、工具返回、文档内容）经 Pydantic v2 校验后再进业务。
+- LLM 结构化输出用 `Pydantic` 模型 + `model_validate`，校验失败走重试或降级（X1 输出侧护栏）。
 
-<!--
-Document your project's quality standards here.
+## 代码风格
 
-Questions to answer:
-- What patterns are forbidden?
-- What linting rules do you enforce?
-- What are your testing requirements?
-- What code review standards apply?
--->
+- `ruff`（lint + format）为唯一风格工具，CI 强制 `ruff check` + `ruff format --check`。
+- 行宽 100，导入用 isort 规则（`ruff` 内置）。
+- 禁止 `import *`、禁止未使用变量、禁止可变默认参数。
 
-(To be filled by the team)
+## 测试要求（健壮性验证，不做高并发）
 
----
+用户约束：**只做功能逻辑的健壮性验证，不做高并发测试**。测试以 `pytest` 为准：
 
-## Forbidden Patterns
+| 层 | 必测内容 |
+|---|---|
+| 单元测试 | 分块策略（表格不被腰斩、不跨章节）、RRF 融合、引用校验、证据门控阈值、Pydantic 校验 |
+| 集成测试 | 文档入库→检索→问答全链路（本地 Milvus/pgvector + mock LLM）、ACL 过滤、拒答分支、模型降级 |
+| 评测回归 | `run_eval.py` 跑 Golden Dataset，指标劣化 > 2pt 阻断 |
 
-<!-- Patterns that should never be used and why -->
+- 外部依赖（LLM、embedding、rerank）在测试中用 mock/fake，保证测试可离线、可重复。
+- 每个 Agent 节点、每个失败分支（拒答/降级/重试）必须有对应测试。
+- 不做压测、不做并发基准；健壮性指**异常输入、边界值、失败恢复**，而非吞吐。
 
-(To be filled by the team)
+## Agent 特有质量闸门（P1 硬要求）
 
----
+实现阶段必须落地以下闸门，缺一即视为未完成：
 
-## Required Patterns
+1. **证据门控（前置）**：检索证据充分度不足 → 直接走拒答，不让模型有生成机会。
+2. **引用强制校验（中置）**：输出后解析所有 `[doc#chunk]`，无引用的断言裁掉。
+3. **事实校验（后置）**：数值/日期/专有名词与原文 chunk 精确匹配，不匹配则拦截或标红。
+4. **循环熔断**：最大步数 / 最大 Token / 最大时长三重上限。
+5. **解析质量门禁**：表格错行、页序倒置、OCR 低置信度 → 拒绝入库并告警。
+6. **证据门控用原 query**：证据分以「原 query」单独检索为准，LLM 改写仅用于生成召回，不得混入门控（改写噪声会把语料外问题误判为证据充分）。见 ADR-12。
+7. **章节上下文扩展**：命中 chunk 补齐同 `section_path` 兄弟 chunk（流程/清单类 query 不漏环节）；`section_path` 只由章节级标题（markdown `#`、`第X章/节`）更新，数字编号继承父章节。见 ADR-14/15。
+8. **实体标识符校验**：query 的英文/型号锚点（Y / XG-2000A / Q3 / CEO / IP54）必须命中检索 chunk，否则判证据不足。真实 embedding 会把「产品参数」这类通用词匹配到语料同类属性导致 evidence 虚高，但实体锚点缺失说明问的是语料外实体。见 ADR-17。
 
-<!-- Patterns that must always be used -->
+## 反模式
 
-(To be filled by the team)
-
----
-
-## Testing Requirements
-
-<!-- What level of testing is expected -->
-
-(To be filled by the team)
-
----
-
-## Code Review Checklist
-
-<!-- What reviewers should check -->
-
-(To be filled by the team)
+- ❌ 依赖"提示词里说别编造"来防幻觉（必须靠硬闸门）。
+- ❌ `understand` 改写丢弃原 query（会丢失强证据导致可答题误拒，改写只做补充召回）。见 ADR-11。
+- ❌ 测试里真实调用外部 LLM/API（不可重复、有成本）。
+- ❌ 用 BLEU/ROUGE/整段比对判评测（用 checklist 要点覆盖率，见 `eval/`）。
+- ❌ 复制粘贴大段相似代码（先检索是否已有，见 guides）。
+- ❌ 提交未格式化/未 lint 的代码。
